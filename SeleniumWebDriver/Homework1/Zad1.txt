@@ -1,3 +1,6 @@
+Да се напишат локатори за елементите на снимките:
+
+
 1. Element1 - Link "Месечен" from www.abv.bg
 - Xpath -> //article[@id='astroContent']//a[contains(@href,'mesechen')]
 - CSS -> article#astroContent a[href*='mesechen']
