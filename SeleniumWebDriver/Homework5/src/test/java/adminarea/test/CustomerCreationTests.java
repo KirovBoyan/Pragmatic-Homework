@@ -4,7 +4,9 @@ import org.apache.commons.lang3.RandomStringUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -30,18 +32,20 @@ public class CustomerCreationTests {
     @Test
     public void adminAreaCustomerCreation() {
         WebElement username = driver.findElement(By.id("input-username"));
-        username.sendKeys("milenadmin");
+        username.sendKeys("admin");
         WebElement password = driver.findElement(By.id("input-password"));
         password.sendKeys("parola123!");
         WebElement loginButton = driver.findElement(By.cssSelector(".btn-primary"));
         loginButton.click();
 
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.cssSelector("#menu-customer > a"))));
         WebElement customersMainMenu = driver.findElement(By.cssSelector("#menu-customer > a"));
         customersMainMenu.click();
-        WebElement customersSubMenu = driver.findElement(By.xpath("//ul[@id='collapse33']/li[1]/a"));
+        WebElement customersSubMenu = driver.findElement(By.xpath("//ul[contains(@id,'collapse')]//a[contains(text(),'Customers')]"));
         customersSubMenu.click();
 
-        WebElement newCustomerPlusButton = driver.findElement(By.cssSelector("dev.pull-right > a.btn-primary"));
+        WebElement newCustomerPlusButton = driver.findElement(By.cssSelector("div.pull-right > a.btn-primary"));
         newCustomerPlusButton.click();
 
         WebElement inputFirstName = driver.findElement(By.id("input-firstname"));
