@@ -34,7 +34,7 @@ public class CustomerCreationTests {
         WebElement username = driver.findElement(By.id("input-username"));
         username.sendKeys("admin");
         WebElement password = driver.findElement(By.id("input-password"));
-        password.sendKeys("parola123!");
+        password.sendKeys("*********");
         WebElement loginButton = driver.findElement(By.cssSelector(".btn-primary"));
         loginButton.click();
 
