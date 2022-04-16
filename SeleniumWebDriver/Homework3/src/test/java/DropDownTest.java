@@ -40,7 +40,7 @@ public class DropDownTest {
         WebElement usernameInput = driver.findElement(By.id("input-username"));
         usernameInput.sendKeys("admin");
         WebElement passwordInput = driver.findElement(By.id("input-password"));
-        passwordInput.sendKeys("parola123!");
+        passwordInput.sendKeys("**********");
         WebElement loginButton = driver.findElement(By.cssSelector(".btn-primary"));
         loginButton.click();
 
