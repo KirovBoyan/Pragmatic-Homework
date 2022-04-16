@@ -29,7 +29,7 @@ public class LoginTest {
         WebElement usernameInput = driver.findElement(By.id("input-username"));
         usernameInput.sendKeys("admin");
         WebElement passwordInput = driver.findElement(By.id("input-password"));
-        passwordInput.sendKeys("parola123!");
+        passwordInput.sendKeys("*********");
         driver.findElement(By.cssSelector(".btn-primary")).click();
 
         WebElement logout = driver.findElement(By.cssSelector("ul.navbar-nav li span"));
