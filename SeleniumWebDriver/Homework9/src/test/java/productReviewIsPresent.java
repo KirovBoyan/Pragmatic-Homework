@@ -28,7 +28,7 @@ public class productReviewIsPresent extends BaseTest {
         //Navigates to the website: "http://shop.pragmatic.bg/admin/"
         goToAdminPanel.goToAdminPage();
         //Logs in as admin
-        logInAsAdmin.logIn("admin13", "parola123!");
+        logInAsAdmin.logIn("********", "*********");
         //Navigates to the admin review section
         reviewsSection.goToReviewsSection();
         //Locates your review in the review list
